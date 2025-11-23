@@ -17,6 +17,10 @@ df = pd.DataFrame(data)
 st.set_page_config(layout="wide", page_title="Covered Call Viewer")
 
 st.title("Covered Call Scanner - Deployed Data")
-st.write("Data last fetched:", current_time)
+# st.info("Test")
+# st.context("TEST")
+# st.sidebar
+
+st.info(f"Data last fetched:   {current_time}")
 
 st.dataframe(df, use_container_width=True)
