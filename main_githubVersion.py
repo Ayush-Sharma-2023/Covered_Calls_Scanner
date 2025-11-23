@@ -16,7 +16,7 @@ df = pd.DataFrame(data)
 # --- Streamlit App ---
 st.set_page_config(layout="wide", page_title="Covered Call Viewer")
 
-st.title("Covered Call Scanner - Deployed Data")
+st.title("Covered Call Scanner")
 # st.info("Test")
 # st.context("TEST")
 # st.sidebar
