@@ -25,29 +25,20 @@ st.info(f"Data last fetched:   {current_time}")
 
 st.dataframe(df, use_container_width=True)
 
-st.subheader("About")
+# st.subheader("About")
 
+st.markdown("""
+# About Covered Call Scanner
 
-st.text(
+The **Covered Call Scanner** is a tool designed to help analyze potential **covered call** opportunities in the Indian stock market. Using the **Upstox API**, the app fetches live stock and option data from NSE, including stocks and call options for different expiries.
 
-"The Covered Call Scanner is a tool designed to help analyze potential covered call opportunities in the Indian stock market. Using the Upstox API, the app fetches live stock and option data from NSE, including stocks and call options for different expiries."\
-"\n\n"\
-"The workflow is as follows:"\
-"\n\n"\
+## Workflow
 
-"Data Collection: Raw market data is fetched from Upstox for all relevant stocks and options."\
-"\n\n"\
+- **Data Collection:** Raw market data is fetched from Upstox for all relevant stocks and options.
+- **Data Processing:** Using **Pandas**, the data is cleaned, filtered, and structured into data frames for easier analysis.
+- **Option Selection:** For each stock, the first **out-of-the-money (OTM) call options** are identified for all available expiries.
+- **Price and ROI Calculation:** Best bid and ask prices are used to calculate **effective investment** and potential **ROI** for each option.
+- **Output:** The results are presented in an interactive **Streamlit dashboard** and saved as a JSON file (`deploy.json`) for further use.
 
-"Data Processing: Using Pandas, the data is cleaned, filtered, and structured into data frames for easier analysis."\
-"\n\n"\
-
-"Option Selection: For each stock, the first out-of-the-money (OTM) call options are identified for all available expiries."\
-"\n\n"\
-
-"Price and ROI Calculation: Best bid and ask prices are used to calculate effective investment and potential ROI for each option."\
-"\n\n"\
-
-"Output: The results are presented in an interactive Streamlit dashboard and saved as a JSON file (deploy.json) for further use."\
-
-"\n\n"\
-"This tool streamlines a complex multi-step process into a simple interface, allowing users to quickly scan options and evaluate potential returns, all in real-time.")
+This tool streamlines a complex multi-step process into a simple interface, allowing users to quickly scan options and evaluate potential returns, all in real-time.
+""")
