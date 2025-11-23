@@ -7,10 +7,8 @@ import streamlit as st
 
 st.set_page_config(layout="wide", page_title="Covered Call Scanner")
 
-with open("json/data.json", "r") as f: 
-    data = json.load(f)
-with open("json/token.json", "r") as f: 
-    token = json.load(f)["access_token"]
+with open("json/data.json", "r") as f:   data = json.load(f)
+with open("json/token.json", "r") as f:  token = json.load(f)["access_token"]
 
 df = pd.DataFrame(data)
 
@@ -119,8 +117,6 @@ for exp in expiries:
     except Exception as e:
         print(f"  -> Error processing expiry {formatted_exp_date}: {e}")
         continue
-
-
 
 print("\n--- Calculating ROI & Investment ---")
 
