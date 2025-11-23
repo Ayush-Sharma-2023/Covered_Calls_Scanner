@@ -26,6 +26,34 @@ st.info(f"Data last fetched:   {current_time}")
 st.dataframe(df, use_container_width=True)
 
 # st.subheader("About")
+st.markdown("""
+### How to Read This Data
+
+**name**  
+• The name of the stock
+
+**lot_size**  
+• The size of 1 lot of the F&O contract  
+
+**min_investment**  
+• Calculated as:  
+  - `lot_size * stock_ask`, or  
+  - `lot_size * stock_ltp` (if stock_ask is not available)
+
+**stock_ltp**  
+• The last traded price of the stock
+
+**stock_ask**  
+• The minimum price someone is willing to sell the stock at
+
+**{Date}**  
+• Represents the expiry date of an option contract  
+• Value in this column = *highest ask of the first OTM call*
+
+**ROI_{Date}**  
+• Annualised ROI  
+• Calculated as: `(call_price / stock_price) * 100`
+""")
 
 st.markdown("""
 # About Covered Call Scanner
