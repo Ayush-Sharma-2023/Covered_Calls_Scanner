@@ -21,7 +21,8 @@ df = pd.DataFrame(data)
 stocks_df = (
     df[
         (df["segment"] == "NSE_FO") &
-        (df["instrument_type"] == "FUT") &
+        # (df["instrument_type"] == "FUT") &
+        (df["instrument_type"] == "CE") &
         (df["asset_type"] == "EQUITY")
     ]
     .drop_duplicates(subset="name")
